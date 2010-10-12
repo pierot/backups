@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SETUP
-cd ~./backups
+cd ~/.backups
 
 # MYSQL
 DEST = "./mysql"
