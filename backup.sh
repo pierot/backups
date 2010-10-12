@@ -4,20 +4,14 @@
 cd ~/.backups
 
 # MYSQL
-DEST = "./mysql"
-
-rsync -av /usr/local/var/mysql/ $DEST
+rsync -av /usr/local/var/mysql/ ./mysql
 
 # APACHE
-DEST = "./apache"
-
-rsync -av /private/etc/hosts $DEST
-rsync -av /private/etc/apache2/extra/httpd-vhosts.conf $DEST
-rsync -av /private/etc/apache2/httpd.conf $DEST
+rsync -av /private/etc/hosts ./apache
+rsync -av /private/etc/apache2/extra/httpd-vhosts.conf ./apache
+rsync -av /private/etc/apache2/httpd.conf ./apache
 
 # SAVE
-DATE = date
-
 git add .
-git commit -a -m "backup completed on $DATE"
+git commit -a -m "backup completed"
 git push origin master
