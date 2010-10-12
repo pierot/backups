@@ -12,7 +12,7 @@ rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache
 rsync -a /private/etc/apache2/httpd.conf ./apache
 
 # SYNC TO DROPBOX
-rsync -a ./apache ./mysql ~/Document/Dropbox/Private/macprox/devenv/
+rsync -a ./apache ./mysql ~/Documents/Dropbox/Private/macprox/devenv/
 
 # SAVE
 git add .
