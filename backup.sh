@@ -4,12 +4,15 @@
 cd ~/.backups
 
 # MYSQL
-rsync -av /usr/local/var/mysql/ ./mysql
+rsync -a /usr/local/var/mysql/ ./mysql
 
 # APACHE
-rsync -av /private/etc/hosts ./apache
-rsync -av /private/etc/apache2/extra/httpd-vhosts.conf ./apache
-rsync -av /private/etc/apache2/httpd.conf ./apache
+rsync -a /private/etc/hosts ./apache
+rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache
+rsync -a /private/etc/apache2/httpd.conf ./apache
+
+# SYNC TO DROPBOX
+rsync -a ./apache ./mysql ~/Document/Dropbox/Private/macprox/devenv/
 
 # SAVE
 git add .
