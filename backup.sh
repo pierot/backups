@@ -15,6 +15,6 @@ rsync -a /private/etc/apache2/httpd.conf ./apache
 rsync -a ./apache ./mysql ~/Documents/Dropbox/Private/macprox/devenv/
 
 # SAVE
-git add .
-git commit -a -m "backup completed"
-git push origin master
+#git add .
+#git commit -a -m "backup completed"
+#git push origin master
