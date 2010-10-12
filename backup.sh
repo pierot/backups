@@ -11,6 +11,11 @@ rsync -a /private/etc/hosts ./apache
 rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache
 rsync -a /private/etc/apache2/httpd.conf ./apache
 
+# INFO
+brew list > ./info/brew.txt
+gem list > ./info/gem.txt
+rvm list > ./info/rvm.txt
+
 # SYNC TO DROPBOX
 rsync -a ./apache ./mysql ~/Documents/Dropbox/Private/macprox/devenv/
 
