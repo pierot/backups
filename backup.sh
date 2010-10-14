@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n ":: BACKUPS :: Starting backup process" | logger
+echo -n ":: BACKUPS :: STARTING" | logger
 
 # SETUP
 cd ~/.backups
@@ -45,3 +45,5 @@ echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
 git add .
 git commit -a -m "backup completed"
 git push origin master
+
+echo -n ":: BACKUPS :: ENDING" | logger
