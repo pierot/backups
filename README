@@ -1,8 +1,19 @@
-My backups.
-You won't find anything for you to use.
+You probably won't find anything for you to use. But you can try.
 
 INSTALLATION
 ------------
-
 Copy the file 'be.wellconsidered.backups' to ~/Library/LaunchAgents
 Edit the file you copied and change the paths according to your current environment.
+
+In Terminal:
+------------	
+	cd ~/Library/LaunchAgents
+	
+	launchctl load be.wellconsidered.backups
+	
+	launchctl list be.wellconsidered.backups # To verify the file is loaded.
+	
+
+More information:
+-----------------
+http://www.davidlanier.com/story/cron-and-launchctl-on-mac-os-x-105-leopard
