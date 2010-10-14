@@ -1,2 +1,8 @@
 My backups.
 You won't find anything for you to use.
+
+INSTALLATION
+------------
+
+Copy the file 'be.wellconsidered.backups' to ~/Library/LaunchAgents
+Edit the file you copied and change the paths according to your current environment.
