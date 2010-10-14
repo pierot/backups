@@ -1,3 +1,4 @@
+emacs
 freetype
 git
 htmldoc
