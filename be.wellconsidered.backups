@@ -3,17 +3,18 @@
 <dict>
 	<key>Label</key>
 	<string>be.wellconsidered.backups</string>
-	<key>LowPriorityIO</key>
-	<true/>
 	<key>Program</key>
 	<string>/Volumes/data/Users/pieterm/.backups/backup.sh</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>backup.sh</string>
 	</array>
-	<key>WatchPaths</key>
-	<array>
-		<string>/Volumes</string>
-	</array>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>StartCalendarInterval</key>
+	<dict>  
+		<key>Minute</key>
+		<integer>59</integer>
+	</dict>
 </dict>
 </plist>

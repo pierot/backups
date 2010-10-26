@@ -1,7 +1,11 @@
 emacs
 freetype
+gettext
 git
+glib
 htmldoc
+ircii
+irssi
 jpeg
 libevent
 libiconv
