@@ -34,6 +34,9 @@ which brew | awk '{print $0}' | while read f; do "$f" list > ./info/brew.txt; do
 which gem | awk '{print $0}' | while read f; do "$f" list > ./info/gem.txt; done
 which rvm | awk '{print $0}' | while read f; do "$f" list > ./info/rvm.txt; done
 
+# SSH
+rsync -a ~/.ssh/* ./ssh
+
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
