@@ -40,7 +40,7 @@ rsync -a ~/.ssh/* ./ssh
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-rsync -a ./apache ./mysql ./mongodb ~/Documents/Dropbox/Private/macprox/settings/devenv/
+rsync -a ./apache ./mysql ./mongodb ./ssh ~/Documents/Dropbox/Private/macprox/settings/devenv/
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
