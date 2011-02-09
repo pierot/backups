@@ -1,0 +1,15 @@
+ENV['DATABASE_URL']
+quit
+exit
+ActiveRecord::Base.connection.tables
+exit
+mc = Memcached.new
+mc.stats
+exit
+memcached.flush_all
+mc = Memcached.new
+mc.flush_all
+mc.help
+mc.flush_all
+mc.delete
+exit

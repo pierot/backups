@@ -3,7 +3,7 @@
 echo -n ":: BACKUPS :: STARTING" | logger
 
 # SETUP
-cd ~/.backups
+cd ~/.backups/backups
 
 # LAUNCHAGENT FILE
 echo -n ":: BACKUPS :: ... LaunchAgent File" | logger
@@ -37,10 +37,16 @@ which rvm | awk '{print $0}' | while read f; do "$f" list > ./info/rvm.txt; done
 # SSH
 rsync -a ~/.ssh/* ./ssh
 
+# GITCONFIG
+rsync -a ~/.gitconfig ./gitconfig
+
+# HEROKU
+rsync -a ~/.heroku/* ./heroku
+
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-rsync -a ./apache ./mysql ./mongodb ./ssh ~/Documents/Dropbox/Private/macprox/settings/devenv/
+rsync -a ./* ~/Documents/Dropbox/Private/macprox/settings/devenv/*
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
