@@ -30,9 +30,9 @@ rsync -a /private/etc/apache2/httpd.conf ./apache
 # INFO
 echo -n ":: BACKUPS :: ... Brew, Gem & RVM Lists" | logger
 
-which brew | awk '{print $0}' | while read f; do "$f" list > ./info/brew.txt; done
-which gem | awk '{print $0}' | while read f; do "$f" list > ./info/gem.txt; done
-which rvm | awk '{print $0}' | while read f; do "$f" list > ./info/rvm.txt; done
+which brew | awk '{print $0}' | while read f; do "$f" list > ./brew.txt; done
+which gem | awk '{print $0}' | while read f; do "$f" list > ./gem.txt; done
+which rvm | awk '{print $0}' | while read f; do "$f" list > ./rvm.txt; done
 
 # SSH
 rsync -a ~/.ssh/* ./ssh
