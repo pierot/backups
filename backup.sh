@@ -48,7 +48,7 @@ echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
 mkdir -p ~/Documents/Dropbox/Private/macprox/settings/backups/`hostname -s`
 
-rsync -a ./ ~/Documents/Dropbox/Private/macprox/settings/backups/`hostname -s`
+rsync -au ./ ~/Documents/Dropbox/Private/macprox/settings/backups/`hostname -s`
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
