@@ -46,7 +46,9 @@ rsync -a ~/.heroku/* ./heroku
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-rsync -a ./* ~/Documents/Dropbox/Private/macprox/settings/devenv/*
+mkdir ~/Documents/Dropbox/Private/macprox/settings/`hostname -s`
+
+rsync -a ./ ~/Documents/Dropbox/Private/macprox/settings/`hostname -s`
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
