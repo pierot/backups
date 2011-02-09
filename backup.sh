@@ -8,7 +8,7 @@ cd ~/.backups/backups
 # LAUNCHAGENT FILE
 echo -n ":: BACKUPS :: ... LaunchAgent File" | logger
 
-rsync -a /Users/pieterm/Library/LaunchAgents/be.wellconsidered.backups ./
+rsync -a /Users/pieterm/Library/LaunchAgents/be.wellconsidered.backups ./../
 
 # MONGODB
 echo -n ":: BACKUPS :: ... MongoDB Databases" | logger
