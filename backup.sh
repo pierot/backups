@@ -8,7 +8,7 @@ cd ~/.backups/backups
 # LAUNCHAGENT FILE
 echo -n ":: BACKUPS :: ... LaunchAgent File" | logger
 
-rsync -a /Users/pieterm/Library/LaunchAgents/be.wellconsidered.backups ./../
+rsync -a ~/Library/LaunchAgents/be.wellconsidered.backups ./../
 
 # MONGODB
 echo -n ":: BACKUPS :: ... MongoDB Databases" | logger
@@ -46,9 +46,9 @@ rsync -a ~/.heroku/* ./heroku
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-mkdir -p ~/Documents/Dropbox/Private/macprox/settings/backups/`hostname -s`
+mkdir -p ~/Dropbox/Private/macprox/settings/backups/`hostname -s`
 
-rsync -au ./ ~/Documents/Dropbox/Private/macprox/settings/backups/`hostname -s`
+rsync -au ./ ~/Dropbox/Private/macprox/settings/backups/`hostname -s`
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
