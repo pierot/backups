@@ -38,11 +38,10 @@ which rvm | awk '{print $0}' | while read f; do "$f" list > ./rvm.txt; done
 # SSH
 rsync -a ~/.ssh/* ./ssh
 
-# GITCONFIG
-rsync -a ~/.gitconfig ./gitconfig
-
 # HEROKU
-rsync -a ~/.heroku/* ./heroku
+if [ -d ~/.heroku ]; then
+	rsync -a ~/.heroku/* ./heroku
+fi
 
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
