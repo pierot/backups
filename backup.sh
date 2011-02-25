@@ -23,7 +23,11 @@ rsync -a /usr/local/var/mysql/ ./mysql
 # APACHE
 echo -n ":: BACKUPS :: ... Apache Config Files / Host File" | logger
 
-mkdir apache
+if [ -d ~/.heroku ]; then
+	rm -r apache
+	mkdir apache
+fi
+
 rsync -a /private/etc/hosts ./apache
 rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache
 rsync -a /private/etc/apache2/httpd.conf ./apache
