@@ -50,9 +50,9 @@ fi
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-mkdir -p ~/Dropbox/Private/macprox/settings/backups/`hostname -s`
+mkdir -p ~/Dropbox/Private/macprox/settings/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 
-rsync -au ./ ~/Dropbox/Private/macprox/settings/backups/`hostname -s`
+rsync -au ./ ~/Dropbox/Private/macprox/settings/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
