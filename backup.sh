@@ -20,6 +20,11 @@ echo -n ":: BACKUPS :: ... MySQL Databases" | logger
 
 rsync -a /usr/local/var/mysql/ ./mysql
 
+# POSTGRESQL
+echo -n ":: BACKUPS :: ... PostgreSQL Databases" | logger
+
+rsync -a /usr/local/var/postgres/ ./postgres
+
 # APACHE
 echo -n ":: BACKUPS :: ... Apache Config Files / Host File" | logger
 
