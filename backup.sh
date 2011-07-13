@@ -28,7 +28,7 @@ rsync -a /usr/local/var/postgres/ ./postgres
 # APACHE
 echo -n ":: BACKUPS :: ... Apache Config Files / Host File" | logger
 
-if [ -d ~/.heroku ]; then
+if [ -d ./apache ]; then
 	rm -r apache
 	mkdir apache
 fi
@@ -44,12 +44,24 @@ which brew | awk '{print $0}' | while read f; do "$f" list > ./brew.txt; done
 which gem | awk '{print $0}' | while read f; do "$f" list > ./gem.txt; done
 which rvm | awk '{print $0}' | while read f; do "$f" list > ./rvm.txt; done
 
+# MM.CFG
+echo -n ":: BACKUPS :: ~/mm.cfg" | logger
+
+rsync -a ~/mm.cfg ./
+
 # SSH
+echo -n ":: BACKUPS :: ~/.ssh" | logger
+
 rsync -a ~/.ssh/* ./ssh
 
 # HEROKU
 if [ -d ~/.heroku ]; then
 	rsync -a ~/.heroku/* ./heroku
+fi
+
+# DOTCLOUD
+if [ -d ~/.dotcloud ]; then
+	rsync -a ~/.dotcloud/* ./dotcloud
 fi
 
 # SYNC TO DROPBOX
