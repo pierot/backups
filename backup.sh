@@ -64,6 +64,11 @@ if [ -d ~/.dotcloud ]; then
 	rsync -a ~/.dotcloud/* ./dotcloud
 fi
 
+# LOCAL VIM FILES
+echo -n ":: BACKUPS :: ~/.vim/*.local" | logger
+
+rsync -a ~/.vim/*.local ./vim
+
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
