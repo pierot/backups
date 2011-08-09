@@ -64,6 +64,11 @@ if [ -d ~/.dotcloud ]; then
 	rsync -a ~/.dotcloud/* ./dotcloud
 fi
 
+# VAGRANT
+if [ -d ~/.vagrant.d ]; then
+	rsync -a ~/.vagrant.d/* ./vagrant.d
+fi
+
 # LOCAL VIM FILES
 echo -n ":: BACKUPS :: ~/.vim/*.local" | logger
 
