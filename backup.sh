@@ -64,6 +64,12 @@ if [ -d ~/.dotcloud ]; then
 	rsync -a ~/.dotcloud/* ./dotcloud
 fi
 
+# RVMRV GEMRC
+echo -n ":: BACKUPS :: gemrc + rvrmrc" | logger
+
+rsync -a ~/.gemrc ./
+rsync -a ~/.rvmrc ./
+
 # VAGRANT
 if [ -d ~/.vagrant.d ]; then
 	rsync -a ~/.vagrant.d/* ./vagrant.d
