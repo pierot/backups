@@ -81,8 +81,8 @@ fi
 # RVMRV GEMRC
 echo -n ":: BACKUPS :: gemrc + rvrmrc" | logger
 
-rsync -a ~/.gemrc ./
-rsync -a ~/.rvmrc ./
+rsync -a ~/.gemrc ./gemrc
+rsync -a ~/.rvmrc ./rvmrc
 
 ###############################################################################
 
