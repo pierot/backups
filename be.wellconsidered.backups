@@ -4,7 +4,7 @@
 	<key>Label</key>
 	<string>be.wellconsidered.backups</string>
 	<key>Program</key>
-	<string>/Volumes/data/Users/pieterm/.backups/backup.sh</string>
+	<string>~/.backups/backup.sh</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>backup.sh</string>
@@ -13,8 +13,8 @@
 	<true/>
 	<key>StartCalendarInterval</key>
 	<dict>  
-		<key>Minute</key>
-		<integer>59</integer>
+		<key>Hour</key>
+		<integer>20</integer>
 	</dict>
 </dict>
 </plist>
