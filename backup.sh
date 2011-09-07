@@ -15,7 +15,8 @@ rsync -a ~/Library/LaunchAgents/be.wellconsidered.backups ./../
 # MONGODB
 echo -n ":: BACKUPS :: ... MongoDB Databases" | logger
 
-rsync -a /usr/local/var/mongodb/ ./mongodb
+# rsync -a /usr/local/var/mongodb/ ./mongodb
+which mongodump | awk '{print $0}' | while read f; do "$f" --host=127.0.0.1:27017 --out=./mongodb/dag-`date +%u`; done
 
 # MYSQL
 echo -n ":: BACKUPS :: ... MySQL Databases" | logger
