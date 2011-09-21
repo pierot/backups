@@ -5,6 +5,7 @@ wget -N --quiet https://raw.github.com/pierot/server-installer/master/lib.sh; . 
 ############################################################################### 
  
 install_dir='.backups'     
+default_install_dir="$HOME/$install_dir"     
  
 ############################################################################### 
  
@@ -102,13 +103,13 @@ _print "Cloning into repo"
 
     cd "$HOME/Library/LaunchAgents/"
 
-    launctl unload be.noort.backups
-    launctl load be.noort.backups
-    launctl list be.noort.backups
+    launchtl unload be.noort.backups
+    launchtl load be.noort.backups
+    launchtl list be.noort.backups
 
     _print "Installation finished **************************"
 
-    if $install_dir != "$HOME/.backups"; then
+    if $install_dir -ne $default_install_dir; then
     	_print "You will need to change the $HOME/Library/LaunchAgents/be.noort.backups so it directs to the directory you choose"
     fi
   fi
