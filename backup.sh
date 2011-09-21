@@ -3,6 +3,8 @@
 echo -n ":: BACKUPS :: STARTING" | logger
 
 # SETUP
+mkdir -p ~/.backups/backups
+
 cd ~/.backups/backups
 
 ###############################################################################
