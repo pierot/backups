@@ -97,19 +97,20 @@ _print "Cloning into repo"
   else
     _print "Installing cron"
 
+    launchctl unload be.noort.backups
     rm -rf "$HOME/Library/LaunchAgents/be.noort.backups"
 
     cp "$install_dir/be.noort.backups" "$HOME/Library/LaunchAgents/be.noort.backups"
 
     cd "$HOME/Library/LaunchAgents/"
 
-    launchtl unload be.noort.backups
-    launchtl load be.noort.backups
-    launchtl list be.noort.backups
+    launchctl unload be.noort.backups
+    launchctl load be.noort.backups
+    launchctl list be.noort.backups
 
     _print "Installation finished **************************"
 
-    if $install_dir -ne $default_install_dir; then
+    if [ -d $default_install_dir ]; then
     	_print "You will need to change the $HOME/Library/LaunchAgents/be.noort.backups so it directs to the directory you choose"
     fi
   fi
