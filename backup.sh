@@ -5,6 +5,18 @@ echo -n ":: BACKUPS :: STARTING" | logger
 # SETUP
 cd ~/.backups/backups
 
+###############################################################################
+
+# DROPBOX
+echo -n ":: BACKUPS :: ... Dropbox folder" | logger
+
+rsync -a ~/.dropbox ./dropbox
+
+# CHEF
+echo -n ":: BACKUPS :: ... Chef" | logger
+
+rsync -a ~/.chef ./chef
+
 # LAUNCHAGENT FILE
 echo -n ":: BACKUPS :: ... LaunchAgent File" | logger
 

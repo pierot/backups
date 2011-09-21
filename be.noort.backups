@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <dict>
 	<key>Label</key>
-	<string>be.wellconsidered.backups</string>
+	<string>be.noort.backups</string>
 	<key>Program</key>
 	<string>~/.backups/backup.sh</string>
 	<key>ProgramArguments</key>
@@ -14,7 +14,7 @@
 	<key>StartCalendarInterval</key>
 	<dict>  
 		<key>Hour</key>
-		<integer>20</integer>
+		<integer>10</integer>
 	</dict>
 </dict>
 </plist>
