@@ -23,7 +23,7 @@ rsync -a ~/.chef ./chef
 # LAUNCHAGENT FILE
 echo -n ":: BACKUPS :: ... LaunchAgent File" | logger
 
-rsync -a ~/Library/LaunchAgents/be.wellconsidered.backups ./../
+rsync -a ~/Library/LaunchAgents/be.noort.backups.plist ./../
 
 ###############################################################################
 
@@ -94,25 +94,10 @@ fi
 
 ###############################################################################
 
-# RVMRV GEMRC
-echo -n ":: BACKUPS :: gemrc + rvrmrc" | logger
-
-rsync -a ~/.gemrc ./gemrc
-rsync -a ~/.rvmrc ./rvmrc
-
-###############################################################################
-
 # VAGRANT
 if [ -d ~/.vagrant.d ]; then
 	rsync -a ~/.vagrant.d/* ./vagrant.d
 fi
-
-###############################################################################
-
-# LOCAL VIM FILES
-echo -n ":: BACKUPS :: ~/.vim/*.local" | logger
-
-rsync -a ~/.vim/*.local ./vim
 
 ###############################################################################
 
