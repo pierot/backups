@@ -2,6 +2,7 @@
 # -
 
 echo -n ":: BACKUPS :: STARTING" | logger
+growlnotify -m ":: BACKUPS :: STARTING"
 
 # SETUP
 mkdir -p ~/.backups/backups
@@ -109,12 +110,14 @@ rsync -au ./ ~/Documents/Backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {prin
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
+growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config FIles"
 
 git add .
 git commit -a -m "backup completed"
 git push origin master
 
 echo -n ":: BACKUPS :: ENDING" | logger
+growlnotify -m ":: BACKUPS :: ENDING"
 
 ###############################################################################
 
