@@ -4,7 +4,7 @@
 	<key>Label</key>
 	<string>be.noort.backups</string>
 	<key>Program</key>
-	<string>/Users/pieterm/.backups/backup.sh</string>
+	<string>/Users/pieterm/.backups/backup</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>backup.sh</string>
