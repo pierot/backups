@@ -7,7 +7,7 @@
 	<string>/Users/pieterm/.backups/backup</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>backup.sh</string>
+		<string>backup</string>
 	</array>
 	<key>LowPriorityIO</key>
 	<true/>
