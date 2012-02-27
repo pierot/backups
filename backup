@@ -47,9 +47,9 @@ if [ -d ./apache ]; then
 	mkdir apache
 fi
 
-rsync -a /private/etc/hosts ./apache
-rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache
-rsync -a /private/etc/apache2/httpd.conf ./apache
+rsync -a /private/etc/hosts ./apache/hosts
+rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache/httpd-vhosts.conf
+rsync -a /private/etc/apache2/httpd.conf ./apache/httpd.conf
 
 ###############################################################################
 
@@ -100,8 +100,8 @@ mkdir -p ~/Dropbox/Private/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {pr
 rsync -au ./ ~/Dropbox/Private/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 
 # SAVE
-echo -n ":: BACKUPS :: ... Commit / Push Info & Config FIles" | logger
-growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config FIles"
+echo -n ":: BACKUPS :: ... Commit / Push Info & Config Files" | logger
+growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config Files"
 
 git add .
 git commit -a -m "backup completed"
@@ -109,6 +109,3 @@ git push origin master
 
 echo -n ":: BACKUPS :: ENDING" | logger
 growlnotify -m ":: BACKUPS :: ENDING"
-
-###############################################################################
-
