@@ -30,12 +30,16 @@ which mongodump | awk '{print $0}' | while read f; do "$f" --host=127.0.0.1:2701
 # MYSQL
 echo -n ":: BACKUPS :: ... MySQL Databases" | logger
 
-rsync -a /usr/local/var/mysql/ ./mysql
+if [ -d /usr/local/var/mysql/ ]; then
+  rsync -a /usr/local/var/mysql/ ./mysql
+fi
 
 # POSTGRESQL
 echo -n ":: BACKUPS :: ... PostgreSQL Databases" | logger
 
-rsync -a /usr/local/var/postgres/ ./postgres
+if [ -d /usr/local/var/postgres/ ]; then
+  rsync -a /usr/local/var/postgres/ ./postgres
+fi
 
 ###############################################################################
 
