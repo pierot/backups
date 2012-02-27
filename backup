@@ -34,10 +34,11 @@ mkdir -p mysql
 
 if [ -d /usr/local/var/mysql/ ]; then
   rsync -a /usr/local/var/mysql/ ./mysql
-  # gzip that folder
-  tar -zcf mysql.tar.gz ./mysql | logger
-  rm -rf ./mysql
 fi
+
+# gzip that folder
+tar -zcf mysql.tar.gz ./mysql | logger
+rm -rf ./mysql
 
 # POSTGRESQL
 echo -n ":: BACKUPS :: ... PostgreSQL Databases" | logger
@@ -46,10 +47,11 @@ mkdir -p postgres
 
 if [ -d /usr/local/var/postgres/ ]; then
   rsync -a /usr/local/var/postgres/ ./postgres
-  # gzip that folder
-  tar -zcf mysql.tar.gz ./postgres | logger
-  rm -rf ./postgres
 fi
+
+# gzip that folder
+tar -zcf mysql.tar.gz ./postgres | logger
+rm -rf ./postgres
 
 ###############################################################################
 
