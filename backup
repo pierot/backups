@@ -42,10 +42,7 @@ rsync -a /usr/local/var/postgres/ ./postgres
 # APACHE
 echo -n ":: BACKUPS :: ... Apache Config Files / Host File" | logger
 
-if [ -d ./apache ]; then
-	rm -r apache
-	mkdir apache
-fi
+mkdir -p apache
 
 rsync -a /private/etc/hosts ./apache/hosts
 rsync -a /private/etc/apache2/extra/httpd-vhosts.conf ./apache/httpd-vhosts.conf
