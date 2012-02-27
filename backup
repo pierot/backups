@@ -2,7 +2,7 @@
 # -
 
 echo -n ":: BACKUPS :: STARTING" | logger
-growlnotify -m ":: BACKUPS :: STARTING"
+# growlnotify -m ":: BACKUPS :: STARTING"
 
 # SETUP
 mkdir -p ~/.backups/backups
@@ -98,11 +98,11 @@ rsync -au ./ ~/Dropbox/Private/backups/`ioreg -l | awk '/IOPlatformSerialNumber/
 
 # SAVE
 echo -n ":: BACKUPS :: ... Commit / Push Info & Config Files" | logger
-growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config Files"
+# growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config Files"
 
 git add .
 git commit -a -m "backup completed"
 git push origin master
 
 echo -n ":: BACKUPS :: ENDING" | logger
-growlnotify -m ":: BACKUPS :: ENDING"
+# growlnotify -m ":: BACKUPS :: ENDING"
