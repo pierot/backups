@@ -32,6 +32,9 @@ echo -n ":: BACKUPS :: ... MySQL Databases" | logger
 
 if [ -d /usr/local/var/mysql/ ]; then
   rsync -a /usr/local/var/mysql/ ./mysql
+  # gzip that folder
+  tar -zcf mysql.tar.gz ./mysql | logger
+  rm -rf ./mysql
 fi
 
 # POSTGRESQL
