@@ -37,8 +37,10 @@ if [ -d /usr/local/var/mysql/ ]; then
 fi
 
 # gzip that folder
-tar -zcf mysql.tar.gz ./mysql | logger
-rm -rf ./mysql
+if [ -d mysql ]; then
+  tar -zcf mysql.tar.gz ./mysql | logger
+  rm -rf mysql
+fi
 
 # POSTGRESQL
 echo -n ":: BACKUPS :: ... PostgreSQL Databases" | logger
@@ -50,8 +52,10 @@ if [ -d /usr/local/var/postgres/ ]; then
 fi
 
 # gzip that folder
-tar -zcf mysql.tar.gz ./postgres | logger
-rm -rf ./postgres
+if [ -d postgres ]; then
+  tar -zcf postgres.tar.gz ./postgres | logger
+  rm -rf postgres
+fi
 
 ###############################################################################
 
