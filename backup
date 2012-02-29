@@ -11,9 +11,9 @@ cd ~/.backups/backups
 ###############################################################################
 
 # DROPBOX
-echo -n ":: BACKUPS :: ... Dropbox folder" | logger
-
-rsync -a ~/.dropbox ./dropbox
+# echo -n ":: BACKUPS :: ... Dropbox folder" | logger
+# 
+# rsync -a ~/.dropbox ./dropbox
 
 # CHEF
 echo -n ":: BACKUPS :: ... Chef" | logger
