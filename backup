@@ -42,13 +42,6 @@ rsync -a ~/.ssh/* ./ssh
 
 ###############################################################################
 
-# HEROKU
-if [ -d ~/.heroku ]; then
-	rsync -a ~/.heroku/* ./heroku
-fi
-
-###############################################################################
-
 # SYNC TO DROPBOX
 echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
