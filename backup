@@ -1,7 +1,7 @@
 #!/bin/bash
 # -
 
-echo -n ":: BACKUPS :: STARTING" | logger
+echo -n "BACKUPS :: STARTING" | logger
 
 # SETUP
 mkdir -p ~/.backups/backups
@@ -10,7 +10,7 @@ cd ~/.backups/backups
 ###############################################################################
 
 # APACHE
-echo -n ":: BACKUPS :: ... Apache Config Files / Host File" | logger
+echo -n "BACKUPS :: ... Apache Config Files / Host File" | logger
 
 mkdir -p apache
 
@@ -21,39 +21,43 @@ rsync -a /private/etc/apache2/httpd.conf ./apache/httpd.conf
 ###############################################################################
 
 # BREW, GEM
-echo -n ":: BACKUPS :: ... Brew, Gem Lists" | logger
+echo -n "BACKUPS :: ... Brew, Gem Lists" | logger
 
 which brew | awk '{print $0}' | while read f; do "$f" list > ./brew.txt; done
 which gem | awk '{print $0}' | while read f; do "$f" list > ./gem.txt; done
 
 ###############################################################################
 
+# NPM
+npm ls -gp > ./npm.txt
+
+###############################################################################
+
 # MM.CFG
-echo -n ":: BACKUPS :: ~/mm.cfg" | logger
+echo -n "BACKUPS :: ~/mm.cfg" | logger
 
 rsync -a ~/mm.cfg ./
 
 ###############################################################################
 
 # SSH
-echo -n ":: BACKUPS :: ~/.ssh" | logger
+echo -n "BACKUPS :: ~/.ssh" | logger
 
 rsync -a ~/.ssh/* ./ssh
 
 ###############################################################################
 
 # SYNC TO DROPBOX
-echo -n ":: BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
+echo -n "BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
 
-mkdir -p ~/Dropbox/Private/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
-rsync -au ./ ~/Dropbox/Private/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
+mkdir -p ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
+rsync -au ./ ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 
 # SAVE
-echo -n ":: BACKUPS :: ... Commit / Push Info & Config Files" | logger
-# growlnotify -m ":: BACKUPS :: ... Commit / Push Info & Config Files"
+echo -n "BACKUPS :: ... Commit / Push Info & Config Files" | logger
 
 git add .
 git commit -a -m "backup completed"
 git push origin master
 
-echo -n ":: BACKUPS :: ENDING" | logger
+echo -n "BACKUPS :: ENDING" | logger
