@@ -23,8 +23,8 @@ rsync -a /private/etc/apache2/httpd.conf ./apache/httpd.conf
 # BREW, GEM
 echo -n "BACKUPS :: ... Brew, Gem Lists" | logger
 
-rm ./brew.txt
-rm ./gem
+rm -f ./brew.txt
+rm -f ./gem.txt
 
 which brew | awk '{print $0}' | while read f; do "$f" list > ./brew.txt; done
 which gem | awk '{print $0}' | while read f; do "$f" list > ./gem.txt; done
