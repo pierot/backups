@@ -87,7 +87,7 @@ _print "Check if 'git' exists"
 _print "Cloning into repo"
 
   if $GIT_INSTALLED; then
-    git clone git://github.com/pierot/backups.git "$install_dir"
+    git clone git@github.com:pierot/backups.git "$install_dir"
   fi
 
   if [ ! -d "$install_dir" ]; then
