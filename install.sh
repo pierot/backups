@@ -96,10 +96,7 @@ _print "Cloning into repo"
   else
     _print "Installing cron"
 
-    launchctl unload be.noort.backup.plist
     rm -rf "$HOME/Library/LaunchAgents/be.noort.backup.plist"
-
-    _print "Copying $install_dir/be.noort.backup.plist"
 
     cp "$install_dir/be.noort.backup.plist" "$HOME/Library/LaunchAgents/be.noort.backup.plist"
 
@@ -107,7 +104,8 @@ _print "Cloning into repo"
 
     launchctl unload be.noort.backup.plist
     launchctl load be.noort.backup.plist
-    launchctl list be.noort.backup.plist
+
+    launchctl list | grep noort
 
     _print "Installation finished **************************"
   fi
