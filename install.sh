@@ -2,54 +2,54 @@
 
 wget -N --quiet https://raw.github.com/pierot/server-installer/master/lib.sh; . ./lib.sh
 
-############################################################################### 
- 
-install_dir='.backups'     
-default_install_dir="$HOME/$install_dir"     
- 
-############################################################################### 
- 
-_usage() {                 
-  _print "                 
- 
-Usage:              install.sh -d ['.backups'] 
- 
-Remote Usage:       bash <( curl -s https://raw.github.com/pierot/backups/master/install.sh ) [-d '.backups'] 
- 
-Options: 
-  
-  -h                Show this message 
+###############################################################################
+
+install_dir='.backups'
+default_install_dir="$HOME/$install_dir"
+
+###############################################################################
+
+_usage() {
+  _print "
+
+Usage:              install.sh -d ['.backups']
+
+Remote Usage:       bash <( curl -s https://raw.github.com/pierot/backups/master/install.sh ) [-d '.backups']
+
+Options:
+
+  -h                Show this message
   -d '.backups'   Install directory (always in $HOME folder)
-  " 
- 
-  exit 0 
-}  
- 
-############################################################################### 
- 
-while getopts :hd: opt; do  
-  case $opt in 
-    h) 
-      _usage 
-      ;; 
-    d) 
+  "
+
+  exit 0
+}
+
+###############################################################################
+
+while getopts :hd: opt; do
+  case $opt in
+    h)
+      _usage
+      ;;
+    d)
       install_dir="$HOME/$OPTARG"
-      ;; 
-    *) 
-      _error "Invalid option received" 
- 
-      _usage 
+      ;;
+    *)
+      _error "Invalid option received"
+
+      _usage
 
       exit 0
       ;;
-  esac 
+  esac
 done
 
-############################################################################### 
+###############################################################################
 
 _print "Installing backups files ***********************"
 
-  cd "$HOME" 
+  cd "$HOME"
 
 _print "Removing current backups installation"
 
@@ -100,7 +100,7 @@ _print "Cloning into repo"
     launchctl unload be.noort.backup.plist
     rm -rf "$HOME/Library/LaunchAgents/be.noort.backup.plist"
 
-    cp "$install_dir/be.noort.backup" "$HOME/Library/LaunchAgents/be.noort.backup.plist"
+    cp "$install_dir/be.noort.backup.plist" "$HOME/Library/LaunchAgents/be.noort.backup.plist"
 
     cd "$HOME/Library/LaunchAgents/"
 
