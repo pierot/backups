@@ -99,6 +99,8 @@ _print "Cloning into repo"
     launchctl unload be.noort.backup.plist
     rm -rf "$HOME/Library/LaunchAgents/be.noort.backup.plist"
 
+    _print "Copying $install_dir/be.noort.backup.plist"
+
     cp "$install_dir/be.noort.backup.plist" "$HOME/Library/LaunchAgents/be.noort.backup.plist"
 
     cd "$HOME/Library/LaunchAgents/"

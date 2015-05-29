@@ -4,7 +4,7 @@
 	<key>Label</key>
 	<string>be.noort.backup</string>
 	<key>Program</key>
-	<string>/Volumes/data/Users/pieterm/.backups/backup</string>
+	<string>/Users/pieterm/.backups/backup</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>backup</string>
@@ -12,7 +12,7 @@
 	<key>LowPriorityIO</key>
 	<true/>
 	<key>StartCalendarInterval</key>
-	<dict>  
+	<dict>
 		<key>Hour</key>
 		<integer>12</integer>
 	</dict>
