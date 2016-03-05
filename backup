@@ -39,7 +39,7 @@ rsync -a ~/.ssh/* ./ssh
 ###############################################################################
 
 # SYNC TO DROPBOX
-echo -n "BACKUPS :: ... Syncing Apache, MySQL & MongoDB Backups" | logger
+echo -n "BACKUPS :: ... Syncing to Dropbox" | logger
 
 mkdir -p ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 rsync -au ./ ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
