@@ -15,8 +15,9 @@ echo -n "BACKUPS :: ... Apache Config Files / Host File" | logger
 mkdir -p apache
 
 rsync -a /private/etc/hosts ./apache/hosts
-rsync -a /private/etc/apache2/httpd.conf ./apache/httpd.conf
+rsync -a /private/etc/apache2/httpd.conf ./apache/httpd2.conf
 rsync -a /usr/local/etc/apache2/2.4/httpd.conf ./apache/httpd24.conf
+rsync -a /usr/local/etc/httpd/httpd.conf ./apache/httpd.conf
 
 ###############################################################################
 
