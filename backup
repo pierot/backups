@@ -40,8 +40,8 @@ rsync -a ~/.ssh/* ./ssh
 # SYNC TO DROPBOX
 echo -n "BACKUPS :: ... Syncing to Dropbox" | logger
 
-mkdir -p ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
-rsync -au ./ ~/Dropbox/Pieter/backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
+mkdir -p ~/Dropbox/Backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
+rsync -au ./ ~/Dropbox/Backups/`ioreg -l | awk '/IOPlatformSerialNumber/ {print $4}' | sed 's|\"||g'`
 
 # SAVE
 echo -n "BACKUPS :: ... Commit / Push Info & Config Files" | logger
